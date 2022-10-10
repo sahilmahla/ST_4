@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  font-size: 16pt;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -7,7 +8,269 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.app-body {
+  margin-top: 150px;
 }
+
+/* passing thoughts */
+input,
+button {
+  font: inherit;
+  box-sizing: border-box;
+}
+
+input[type='submit'],
+button {
+  cursor: pointer;
+}
+
+.passing-thoughts-container {
+  margin: 0 auto;
+  max-width: 600px;
+  width: 95%;
+}
+
+.passing-thoughts-container h1 {
+  text-align: center;
+  margin: 80px 0;
+}
+
+.passing-thoughts-container h1:before {
+  content: '💭';
+  margin-right: 0.5em;
+}
+
+.AddThoughtForm {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.AddThoughtForm input {
+  padding: 1.5rem;
+  border: 1px solid #666;
+  border-radius: 3px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+
+
+.AddThoughtForm input[type='text'] {
+  flex-grow: 1;
+  margin-bottom: 10px;
+}
+
+.AddThoughtForm input[type='submit'] {
+  border: none;
+  background-color: rgb(238, 238, 31);
+}
+
+.thoughts {
+  list-style-type: none;
+  padding: 0;
+}
+
+.Thought {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 3px;
+  background-color: #eee;
+}
+
+.Thought .remove-button {
+  font-size: 80%;
+  float: right;
+  border: 0;
+  border-radius: 3px;
+  background: transparent;
+}
+
+.Thought .remove-button:hover {
+  color: #fff;
+  background-color: #000;
+}
+/* passing thoughts */
+
+/* home */
+.home-container {
+  display: flex;
+  height: 500px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.home-container h1 {
+  font-size: 30px;
+  text-align: center;
+}
+
+.home-container span {
+  font-size: 100px;
+}
+/* home */
+
+/* navbar */
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 40px 10px;
+  box-shadow: 0px 0px 20px -10px #000000;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  background-color: white;
+  width: 100%;
+}
+
+nav a {
+  text-decoration: none;
+  margin: 0 10px;
+  color: rgb(26, 26, 26);
+  font-size: 16px;
+}
+
+nav a.active {
+  font-weight: bold;
+}
+
+.menu-btn {
+  display: none;
+  align-self: flex-end;
+  padding: 10px;
+}
+
+.menu-btn img {
+  width: 20px;
+  margin: 10px;
+}
+
+.menu-links {
+  display: flex;
+  box-sizing: border-box;
+  align-self: flex-start;
+}
+
+@media screen and (max-width: 400px) {
+  .menu-btn {
+    display: flex;
+  }
+
+  .menu-links {
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    border-top: solid 1px #c9c9c9;
+  }
+
+  .nav-mobile {
+    flex-direction: column;
+  }
+
+  .menu-links a {
+    margin: 10px 0;
+  }
+
+  nav {
+    padding: 0;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+}
+
+
+/* navbar */
+
+/* tic tac toe */
+.tic-tac-toe {
+  min-width: 210px;
+  font: 14px "Century Gothic", Futura, sans-serif;
+}
+
+.tic-tac-toe ol {
+  padding: 0;
+  margin: 0;
+}
+
+.tic-tac-toe li button {
+  background-color: white;
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 4px 0;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tic-tac-toe li button:hover {
+  background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  padding: 12px;
+  transition: 0.2s;
+}
+
+.tic-tac-toe .board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.tic-tac-toe .status {
+  margin-bottom: 10px;
+}
+
+.tic-tac-toe .square {
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 55px;
+  height: 55px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 55px;
+}
+
+.tic-tac-toe .square:focus {
+  outline: none;
+}
+
+.tic-tac-toe .kbd-navigation .square:focus {
+  background: #ddd;
+}
+
+.tic-tac-toe .game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.tic-tac-toe .game-info {
+  margin-top: 30px;
+}
+
+.tic-tac-toe h1 {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.tic-tac-toe .next-player {
+  margin: 50px 0 15px 0;
+  text-align: center;
+}
+/* tic tac toe */
+
+/* utils */
+.hide {
+  display: none;
+}
+/* utils */
